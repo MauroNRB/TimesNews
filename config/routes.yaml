@@ -1,3 +1,14 @@
 index:
     path: /
-    controller: App\Controller\index::index
+    controller: App\Controller\indexController::show
+
+games:
+    path: /games
+    controller: App\Controller\Games\freeController::show
+
+promotion_game:
+    path: /games/promotion-games
+    controller: App\Controller\Games\promotionController::show
+free_game:
+    path: /games/free-games
+    controller: App\Controller\Games\freeController::show

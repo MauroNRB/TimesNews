@@ -2515,7 +2515,6 @@
 	input[type="submit"],
 	input[type="reset"],
 	input[type="button"],
-	button,
 	.button {
 		-moz-appearance: none;
 		-webkit-appearance: none;
@@ -2667,7 +2666,6 @@
 		input[type="button"].disabled,
 		input[type="button"]:disabled,
 		button.disabled,
-		button:disabled,
 		.button.disabled,
 		.button:disabled {
 			background-color: #9a9a9a !important;
@@ -2682,7 +2680,6 @@
 			input[type="submit"],
 			input[type="reset"],
 			input[type="button"],
-			button,
 			.button {
 				padding: 0;
 				width: 100%;
@@ -2707,7 +2704,6 @@
 		left: 0;
 		line-height: 3.25em;
 		position: absolute;
-		text-align: right;
 		width: 100%;
 		z-index: 10001;
 	}
@@ -2726,7 +2722,6 @@
 			line-height: inherit;
 			margin: 0;
 			padding: 0;
-			position: absolute;
 			top: 0;
 			font-size: 1em;
 		}
@@ -3081,57 +3076,6 @@
 
 			#banner h1 {
 				font-size: 1.5em;
-			}
-
-		}
-
-/* Footer */
-
-	#footer {
-		padding: 6em 0;
-		background: #358bca;
-		color: #fff;
-		text-align: center;
-	}
-
-		#footer h3 {
-			color: #FFF;
-			margin-bottom: 2em !important;
-		}
-
-		#footer label {
-			text-align: left;
-			color: #FFF;
-		}
-
-		#footer .copyright {
-			color: rgba(255, 255, 255, 0.5);
-			font-size: 0.8em;
-			margin: 0 0 2em 0;
-			padding: 0;
-		}
-
-			#footer .copyright a {
-				color: rgba(255, 255, 255, 0.5);
-				text-decoration: none;
-			}
-
-				#footer .copyright a:hover {
-					color: #FFF;
-				}
-
-		@media screen and (max-width: 980px) {
-
-			#footer {
-				padding: 4em 0;
-			}
-
-		}
-
-		@media screen and (max-width: 736px) {
-
-			#footer {
-				padding: 3em 0;
 			}
 
 		}

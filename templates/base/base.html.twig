@@ -5,37 +5,77 @@
                     <meta charset="utf-8" />
                     <meta name="viewport" content="width=device-width, initial-scale=1" />
                     <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
-                <title>Times News{% block title %}{% endblock %}</title>
+                    <link rel="stylesheet" href="{{ asset('css/mmenu.css') }}" />
+                    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
+                    <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}" />
+                    <link rel="stylesheet/less" type="text/css" href="{{ asset('css/style.less') }}" />
+                    <title>Times News{% block title %}{% endblock %}</title>
             {% endblock %}
         </head>
         <body>
             {% block header %}
-                <header id="header">
-                    <div class="inner">
+                <div id="header" class="header">
+                        <a href="#menu"><span class="fa fa-bars"></span></a>
                         <a href="{{ path('index') }}" class="logo"><strong>Times News</strong></a>
-                        <nav id="nav">
-                            <a href="{{ path('index') }}">Inicio</a>
-                        </nav>
-                        <a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
-                    </div>
-                </header>
+                </div>
+                <nav id="menu">
+                    <ul>
+                        <li><a href="{{ path('index') }}">Inicio</a></li>
+                        <li><span>Games</span>
+                            <ul>
+                                <li><a href="{{ path('promotion_game') }}">Promoções de Games</a></li>
+                                <li><a href="{{ path('free_game') }}">Games Gratuitos</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
             {% endblock %}
             <div id="content">
                 {% block content %}{% endblock %}
             </div>
 
             {% block footer %}
-                <footer id="footer">
-                    <div class="inner">
+                <footer>
 
-                    </div>
                 </footer>
             {% endblock %}
             {% block javascript %}
                     <script src="{{ asset('js/jquery.min.js') }}"></script>
-                    <script src="{{ asset('js/skel.min.js') }}"></script>
-                    <script src="{{ asset('js/util.js') }}"></script>
-                    <script src="{{ asset('js/main.js') }}"></script>
+                    <script src="{{ asset('js/mmenu.js') }}"></script>
+                    <script>
+                        new Mmenu( document.querySelector('#menu'));
+                        document.addEventListener( 'click', function( evnt ) {
+                            var anchor = evnt.target.closest('a[href^="#"]');
+                            if (anchor) {
+                                evnt.preventDefault();
+                            }
+                        });
+                    </script>
+                    <script src="{{ asset('js/less.min.js') }}"></script>
+                    <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+                    <script>
+                        $(document).ready(function(){
+                            $('.owl-carousel').owlCarousel({
+                                items : 4,
+                                loop:true,
+                                autoplay:true,
+                                autoplayTimeout:7500,
+                                autoplayHoverPause:true,
+                                nav:false,
+                                responsive:{
+                                    0:{
+                                        items:1
+                                    },
+                                    600:{
+                                        items:3
+                                    },
+                                    1000:{
+                                        items:5
+                                    }
+                                }
+                            })
+                        });
+                    </script>
             {% endblock %}
         </body>
 </html>

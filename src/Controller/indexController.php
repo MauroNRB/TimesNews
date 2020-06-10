@@ -4,9 +4,9 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-class index extends AbstractController
+class indexController extends AbstractController
 {
-    public function index()
+    public function show()
     {
         return $this->render('index.html.twig');
     }

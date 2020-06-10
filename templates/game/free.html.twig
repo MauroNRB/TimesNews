@@ -1,0 +1,25 @@
+{% extends 'base/base.html.twig' %}
+
+{% block title %}{% endblock %}
+{% block head %}{{ parent() }}{% endblock %}
+{% block header %}{{ parent() }}{% endblock %}
+{% dump info %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="owl-carousel owl-theme">
+            {% for row in info %}
+                {% if row.id == 'free_games' %}
+                        {% for games in row.items %}
+                            <div class="item"><img src="{{ games.thumbnail_file }}"></div>
+                        {% endfor %}
+                {% endif %}
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascript %}
+    {{ parent() }}
+{% endblock %}
