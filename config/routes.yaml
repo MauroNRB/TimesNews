@@ -4,11 +4,11 @@ index:
 
 games:
     path: /games
-    controller: App\Controller\Games\freeController::show
+    controller: App\Controller\Games\gameController::show
 
-promotion_game:
+game_promotion:
     path: /games/promotion-games
     controller: App\Controller\Games\promotionController::show
-free_game:
+game_free:
     path: /games/free-games
     controller: App\Controller\Games\freeController::show

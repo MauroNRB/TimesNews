@@ -21,10 +21,11 @@
                 <nav id="menu">
                     <ul>
                         <li><a href="{{ path('index') }}">Inicio</a></li>
-                        <li><span>Games</span>
+                        <li>
+                            <a href="{{ path('games') }}">Games</a>
                             <ul>
-                                <li><a href="{{ path('promotion_game') }}">Promoções de Games</a></li>
-                                <li><a href="{{ path('free_game') }}">Games Gratuitos</a></li>
+                                <li><a href="{{ path('game_promotion') }}">Promoções de Games</a></li>
+                                <li><a href="{{ path('game_free') }}">Games Gratuitos</a></li>
                             </ul>
                         </li>
                     </ul>

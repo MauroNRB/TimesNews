@@ -10,7 +10,7 @@ footer {
 
 .owl-carousel .item img {
   display: block;
-  width: 100%;
+  width: 90%;
   height: auto;
 }
 
@@ -21,6 +21,44 @@ footer {
       margin-right: 10px;
       margin-bottom: 0px;
       margin-left: 10px;
+
+    }
+    .owl-stage-outer {
+      .owl-item {
+        height: 600px !important;
+        .item {
+
+          .price {
+            position: absolute;
+            bottom: 95px;
+          }
+
+          .discounted {
+            position: absolute;
+            bottom: 75px;
+          }
+          .publisher {
+            position: absolute;
+            bottom: 45px;
+          }
+          .publisher-link {
+            position: absolute;
+            bottom: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 500px) {
+  #content {
+    .owl-carousel {
+      .owl-stage-outer {
+        .owl-item {
+          height: 650px !important;
+        }
+      }
     }
   }
 }

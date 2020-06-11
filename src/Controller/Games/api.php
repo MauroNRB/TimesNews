@@ -2,6 +2,10 @@
 
 namespace App\Controller\Games;
 
+/**
+ * @author Mauro Ribeiro
+ * @since 2020-06-10
+ */
 class api
 {
     public function info()

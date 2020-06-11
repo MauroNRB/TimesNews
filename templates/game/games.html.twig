@@ -1,0 +1,41 @@
+{% extends 'base/base.html.twig' %}
+
+{% block title %}{{ title_page }}{% endblock %}
+{% block head %}{{ parent() }}{% endblock %}
+{% block header %}{{ parent() }}{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            {% for type in types %}
+                <div class="owl-carousel owl-theme">
+                    {% for row in info %}
+                        {% if row.id == type %}
+                                {% for games in row.items %}
+                                    <div class="item">
+                                        <a class="image" href="{{ games.url_store }}">
+                                            <img src="{{ games.thumbnail_file }}">
+                                        </a>
+                                        <h4 class="title">{{ games.title }}</h4>
+                                        {% if row.id == 'deals_aggregator' %}
+                                            <p class="price">Preço: {{ games.discounted_price }}</p>
+                                        {% endif %}
+                                        <p class="discounted">Desconto: {{ games.discounted_percentage }}</p>
+                                        <p class="publisher">Plataforma: {{ games.publisher_id|upper }}</p>
+                                        <a class="publisher-link" href="{{ games.url_store }}">
+                                            <button type="button" class="btn btn-primary">Ir para loja</button>
+                                        </a>
+                                    </div>
+                                {% endfor %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <br>
+                <br>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascript %}
+    {{ parent() }}
+{% endblock %}
