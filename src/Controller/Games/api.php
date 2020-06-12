@@ -8,7 +8,7 @@ namespace App\Controller\Games;
  */
 class api
 {
-    public function info()
+    public function getInfo()
     {
         $apiUrl = "https://gx.opera-api.com/api/v1/games?country=br&language=pt";
 

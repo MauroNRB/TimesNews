@@ -1,0 +1,40 @@
+{% extends 'base/base.html.twig' %}
+
+{% block title %}{{ title_page }}{% endblock %}
+{% block head %}{{ parent() }}{% endblock %}
+{% block header %}{{ parent() }}{% endblock %}
+
+{% block content %}
+    <br><br><br><br>
+    <div class="container">
+        <div class="row">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Código de</th>
+                        <th scope="col">Código para</th>
+                        <th scope="col">Preço mais alto</th>
+                        <th scope="col">Preço mais baixo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in info %}
+                            <tr>
+                                <td>{{ row.name }}</td>
+                                <td>{{ row.code }}</td>
+                                <td>{{ row.codein }}</td>
+                                <td>{{ row.high }}</td>
+                                <td>{{ row.low }}</td>
+                            </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <br><br><br>
+{% endblock %}
+
+{% block javascript %}
+    {{ parent() }}
+{% endblock %}

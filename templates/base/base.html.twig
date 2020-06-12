@@ -1,3 +1,5 @@
+    {% set nameProject = 'SharePromo' %}
+
 <!DOCTYPE html>
 <html>
         <head>
@@ -9,14 +11,14 @@
                     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
                     <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}" />
                     <link rel="stylesheet/less" type="text/css" href="{{ asset('css/style.less') }}" />
-                    <title>Times News{% block title %}{% endblock %}</title>
+                    <title>{{ nameProject }}{% block title %}{% endblock %}</title>
             {% endblock %}
         </head>
         <body>
             {% block header %}
                 <div id="header" class="header">
                         <a href="#menu"><span class="fa fa-bars"></span></a>
-                        <a href="{{ path('index') }}" class="logo"><strong>Times News</strong></a>
+                        <a href="{{ path('index') }}" class="logo"><strong>{{ nameProject }}</strong></a>
                 </div>
                 <nav id="menu">
                     <ul>
@@ -28,6 +30,7 @@
                                 <li><a href="{{ path('game_free') }}">Games Gratuitos</a></li>
                             </ul>
                         </li>
+                        <li><a href="{{ path('currency') }}">Cotações de Moedas</a></li>
                     </ul>
                 </nav>
             {% endblock %}

@@ -14,7 +14,7 @@ class promotionController extends AbstractController
     {
         $api = new api();
 
-        $info = $api->info();
+        $info = $api->getInfo();
         return $this->render('game/games.html.twig', array(
             'info' => $info,
             'title_page' => ' - Promoção dos Games',
